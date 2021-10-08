@@ -1,0 +1,46 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="submitUser()">
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">Name</label>
+                <input [ngClass]="{
+                    'has-error':userForm.controls.Name.touched && userForm.controls.Name.invalid,
+                    'has-success' : userForm.controls.Name.touched && userForm.controls.Name.valid
+                }" type="text" formControlName="Name" class="form-control">
+                <span style="color:red;"
+                *ngIf="userForm.controls.Name.touched && userForm.controls.Name.invalid">Please Enter username</span>
+            </div>
+            <div class="col-lg-6">
+                <label for="">College</label>
+                <input [ngClass]="{
+                    'has-error':userForm.controls.College.touched && userForm.controls.College.invalid,
+                    'has-success' : userForm.controls.College.touched && userForm.controls.College.valid
+                }" type="text" formControlName="College" class="form-control">
+                <span style="color:red;"
+                 *ngIf="userForm.controls.College.touched && userForm.controls.College.invalid">Enter Valid Email</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">Phone</label>
+                <input [ngClass]="{
+                    'has-error':userForm.controls.Phone.touched && userForm.controls.Phone.invalid,
+                    'has-success' : userForm.controls.Phone.touched && userForm.controls.Phone.valid
+                }" type="text" formControlName="Phone" class="form-control">
+            </div>
+            <div class="col-lg-6">
+                <label for="">Branch</label>
+                <select name="" id="" formControlName="Branch" class="form-control">
+                    <option value="CSE">Computer Science and  Engineering</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="ETC">Electronics and Telecommunications</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <input type="submit" class="btn btn-primary btn-sm">
+            </div>
+        </div>
+    </form>
+</div>
